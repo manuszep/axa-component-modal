@@ -38,7 +38,7 @@ class Trigger extends Component {
 const mapDispatchToProps = dispatch => ({
   "show": (title, body, btnPrimary, btnPrimaryAction, btnClose, btnCloseAction, id) => {
     document.body.classList.add('modal-open');
-    dispatch(showModal(title, body, btnPrimary, btnPrimaryAction, btnClose, btnCloseAction, modalId));
+    dispatch(showModal(title, body, btnPrimary, btnPrimaryAction, btnClose, btnCloseAction, id));
   }
 });
 
