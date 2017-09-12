@@ -17,16 +17,6 @@
     "react-component"
   ],
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.2",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "babel-runtime": "^6.26.0",
-    "css-loader": "^0.28.7",
-    "es5-shim": "^4.5.9",
     "eslint": "^4.6.1",
     "eslint-plugin-react": "^7.3.0",
     "jasmine": "^2.8.0",
@@ -35,18 +25,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.7.1",
-    "classnames": "^2.2.5",
-    "immutability-helper": "^2.3.1",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "axa-component-translate": "manuszep/axa-component-translate.git"
+    "karma-webpack": "^2.0.4"
   },
   "peerDependencies": {
     "react": "^15.6.1",
@@ -58,7 +37,28 @@
     "axa-component-translate": "manuszep/axa-component-translate.git"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "css-loader": "^0.28.7",
+    "es5-shim": "^4.5.9",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1",
+    "classnames": "^2.2.5",
+    "immutability-helper": "^2.3.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "axa-component-translate": "manuszep/axa-component-translate.git"
   },
   "repository": "https://github.com/manuszep/axa-component-modal.git"
 }
