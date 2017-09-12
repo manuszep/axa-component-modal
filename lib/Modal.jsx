@@ -23,31 +23,37 @@ class Modal extends Component {
   closeModal() {
     const { btnCloseAction, dismissModal } = this.props;
 
+    // Execute custom close action if defined as a function
     if (typeof btnCloseAction === "function") {
       btnCloseAction();
     }
 
+    // Always close the modal window after
     dismissModal();
   }
 
   runPrimaryAction() {
     const { btnPrimaryAction, dismissModal } = this.props;
 
+    // Execute custom primary action if defined as a function
     if (typeof btnPrimaryAction === "function") {
       btnPrimaryAction();
     }
 
+    // Always close the modal window after
     dismissModal();
   }
 
   getModalBody() {
     const { body } = this.props;
 
+    // If body is a function it's a JSX component.
     if (typeof body === "function") {
       const Content = body;
       return <Content />
     }
 
+    // Otherwise, put it in a div with translation
     return <T tag="div" className="modal-body">{ body }</T>;
   }
 
@@ -64,7 +70,7 @@ class Modal extends Component {
 
     if (typeof btnClose === "undefined") return null;
 
-    return <T tag="button" type="button" className="btn btn-primary" onClick={ this.closeModal }>{ btnPrimary }</T>;
+    return <T tag="button" type="button" className="btn btn-primary" onClick={ this.closeModal }>{ btnClose }</T>;
   }
 
   render() {
@@ -102,14 +108,14 @@ class Modal extends Component {
 const mapStateToProps = (state, props) => {
   const store = (typeof props.store === "undefined") ? state.modal : props.store;
   return {
-    "show": store.showModal,
+    "show": store.show,
     "title": store.title,
     "body": store.body,
     "btnPrimary": store.btnPrimary,
     "btnPrimaryAction": store.primaryAction,
     "btnClose": store.btnClose,
     "btnCloseAction": store.primaryAction,
-    "id": store.modalId
+    "id": store.id
   }
 };
 

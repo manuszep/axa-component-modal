@@ -43,6 +43,7 @@ class MyComponent extends Component {
   render() {
     return (
       
+      // Create a button that opens a modal window
       <Trigger 
                tag="button"
                title="My modal title"
