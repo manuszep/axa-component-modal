@@ -18,12 +18,12 @@
   ],
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "babel-eslint": "^7.2.3",
     "eslint": "^4.6.1",
     "eslint-plugin-react": "^7.3.0",
     "jasmine": "^2.8.0",
@@ -37,24 +37,25 @@
     "webpack-dev-server": "^2.7.1"
   },
   "peerDependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.3.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"
   },
   "dependencies": {
+    "babel-preset-env": "^1.6.0",
     "babel-runtime": "^6.26.0",
+    "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
     "es5-shim": "^4.5.9",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "classnames": "^2.2.5",
     "immutability-helper": "^2.3.1",
+    "react": "^15.6.1",
+    "react-component-translate": "manuszep/react-component-translate.git",
+    "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "react-component-translate": "manuszep/react-component-translate.git"
+    "redux": "^3.7.2"
   },
   "repository": "https://github.com/manuszep/react-component-modal.git"
 }
