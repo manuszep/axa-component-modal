@@ -8,9 +8,9 @@ module.exports = {
 
   output: {
     path: path.join(__dirname),
-    filename: 'axa-component-modal.js',
+    filename: 'react-component-modal.js',
     libraryTarget: 'umd',
-    library: 'axa-component-modal'
+    library: 'react-component-modal'
   },
 
   externals: {
@@ -18,7 +18,7 @@ module.exports = {
     "classnames": "classnames",
     "immutability-helper": "immutability-helper",
     "react-redux": "react-redux",
-    "axa-component-translate": "axa-component-translate"
+    "react-component-translate": "react-component-translate"
   },
 
   module: {

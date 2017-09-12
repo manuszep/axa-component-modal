@@ -1,11 +1,11 @@
-# AXA React Components - Modal
+# React Components - Modal
 
 This is a modal component for React applications
 
 ## Add the reducer
 ```js
 import { combineReducers } from "redux";
-import { modalReducer } from "axa-component-modal";
+import { modalReducer } from "react-component-modal";
 
 const AppReducer = combineReducers({
   "modal": modalReducer,
@@ -18,7 +18,7 @@ export default AppReducer;
 ## Place the modal at the end of the root component
 ```js
 import React, {Component} from "react";
-import Modal from "axa-component-modal";
+import Modal from "react-component-modal";
 
 class App extends Component {
   render() {
@@ -35,7 +35,7 @@ class App extends Component {
 ## Add a modal trigger
 ```js
 import React, {Component} from "react";
-import { Trigger } from "axa-component-modal";
+import { Trigger } from "react-component-modal";
 
 import MyModalContent from "./MyModalContent.jsx";
 
@@ -66,7 +66,7 @@ class MyComponent extends Component {
 
 ## Open or close the modal with API
 ```js
-import { showModal, dismissModal } from "axa-component-modal";
+import { showModal, dismissModal } from "react-component-modal";
 
 import MyModalContent from "./MyModalContent.jsx";
 

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import classNames from "classnames";
-import { default as T } from "axa-component-translate";
+import { default as T } from "react-component-translate";
+import { dismissModal } from "./Actions";
 
 /**
  * This is the modal window. It is placed at the end of the App component and should be only instantiated once.
@@ -21,11 +22,11 @@ import { default as T } from "axa-component-translate";
 class Modal extends Component {
 
   closeModal() {
-    const { btnCloseAction, dismissModal } = this.props;
+    const { btnCloseAction, dismissModal, dispatch } = this.props;
 
     // Execute custom close action if defined as a function
     if (typeof btnCloseAction === "function") {
-      btnCloseAction();
+      btnCloseAction(dispatch);
     }
 
     // Always close the modal window after
@@ -33,11 +34,11 @@ class Modal extends Component {
   }
 
   runPrimaryAction() {
-    const { btnPrimaryAction, dismissModal } = this.props;
+    const { btnPrimaryAction, dismissModal, dispatch } = this.props;
 
     // Execute custom primary action if defined as a function
     if (typeof btnPrimaryAction === "function") {
-      btnPrimaryAction();
+      btnPrimaryAction(dispatch);
     }
 
     // Always close the modal window after
@@ -62,7 +63,7 @@ class Modal extends Component {
 
     if (typeof btnPrimary === "undefined") return null;
 
-    return <T tag="button" type="button" className="btn btn-primary" onClick={ this.runPrimaryAction }>{ btnPrimary }</T>;
+    return <T tag="button" type="button" className="btn btn-primary" onClick={ () => this.runPrimaryAction() }>{ btnPrimary }</T>;
   }
 
   getSecondaryButton() {
@@ -70,7 +71,7 @@ class Modal extends Component {
 
     if (typeof btnClose === "undefined") return null;
 
-    return <T tag="button" type="button" className="btn btn-primary" onClick={ this.closeModal }>{ btnClose }</T>;
+    return <T tag="button" type="button" className="btn btn-secondary" onClick={ () => this.closeModal() }>{ btnClose }</T>;
   }
 
   render() {
@@ -79,22 +80,24 @@ class Modal extends Component {
 
     return (
       <div className={ cls } id={ id }>
-        <div className="modal-backdrop" onClick={ this.closeModal }></div>
+        <div className="modal-backdrop" onClick={ () => this.closeModal() }></div>
 
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
               <T tag="h5" className="modal-title">{title}</T>
-              <button type="button" className="close" aria-label="Close" onClick={ this.closeModal }>
+              <button type="button" className="close" aria-label="Close" onClick={ () => this.closeModal() }>
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
 
-            { this.getModalBody() }
+            <div className="modal-body">
+              { this.getModalBody() }
+            </div>
 
             <div className="modal-footer">
-              { this.getPrimaryButton() }
               { this.getSecondaryButton() }
+              { this.getPrimaryButton() }
             </div>
           </div>
         </div>
@@ -112,9 +115,9 @@ const mapStateToProps = (state, props) => {
     "title": store.title,
     "body": store.body,
     "btnPrimary": store.btnPrimary,
-    "btnPrimaryAction": store.primaryAction,
+    "btnPrimaryAction": store.btnPrimaryAction,
     "btnClose": store.btnClose,
-    "btnCloseAction": store.primaryAction,
+    "btnCloseAction": store.btnCloseAction,
     "id": store.id
   }
 };
@@ -123,7 +126,9 @@ const mapDispatchToProps = dispatch => ({
   "dismissModal": () => {
     document.body.classList.remove('modal-open');
     dispatch(dismissModal());
-  }
+  },
+
+  "dispatch": dispatch
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

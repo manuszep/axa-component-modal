@@ -1,8 +1,8 @@
 {
-  "name": "axa-component-modal",
+  "name": "react-component-modal",
   "version": "1.0.0",
   "description": "Modal component for AXA web applications. This is part of the AXA React components library.",
-  "main": "axa-component-modal.js",
+  "main": "react-component-modal.js",
   "scripts": {
     "test": "eslint lib/ spec/ && ./node_modules/karma/bin/karma start karma.conf.js",
     "watch-test": "./node_modules/karma/bin/karma start karma.conf.js --auto-watch --no-single-run",
@@ -57,7 +57,7 @@
     "immutability-helper": "^2.3.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "axa-component-translate": "manuszep/axa-component-translate.git"
+    "react-component-translate": "manuszep/react-component-translate.git"
   },
-  "repository": "https://github.com/manuszep/axa-component-modal.git"
+  "repository": "https://github.com/manuszep/react-component-modal.git"
 }
